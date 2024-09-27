@@ -6,7 +6,8 @@ import pattern         from '../../fn/modules/pattern.js';
 import delegate        from '../../dom/modules/delegate.js';
 import events          from '../../dom/modules/events.js';
 import isPrimaryButton from '../../dom/modules/is-primary-button.js';
-import { isElementNode, isInternalLink } from '../../dom/modules/node.js';
+import isElement       from '../../dom/modules/is-element.js';
+import { isInternalLink }  from '../../dom/modules/node.js';
 import trigger         from '../../dom/modules/trigger.js';
 import select          from '../../dom/modules/select.js';
 
@@ -295,7 +296,7 @@ function pushActives(actives, target) {
 
 function pushAddedActives(added, mutation) {
     return A.filter
-    .call(mutation.addedNodes, isElementNode)
+    .call(mutation.addedNodes, isElement)
     .reduce(pushActives, added);
 }
 
