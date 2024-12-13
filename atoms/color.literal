@@ -9,6 +9,6 @@
 \`\`\`
 **/
 
-:root              { --${ data.name }: ${ data.value }; }
+:root { --${ data.name }: ${ data.value }; }
 .${ data.name }-fg { color: ${ data.value }; stroke: ${ data.value }; }
 .${ data.name }-bg { background-color: ${ data.value }; fill: ${ data.value }; }
