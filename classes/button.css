@@ -109,9 +109,9 @@ button,
 button > svg,
 [type="button"] > svg,
 .button > svg {
-    /* Allow SVGs to render as inline icons */
+    /* Make SVGs render as inline icons by default */
     display: inline-block;
-    width: auto;
+    width: 1lh;
     height: 1lh;
     vertical-align: middle;
 }
