@@ -125,12 +125,12 @@ button:focus-visible,
 .button:focus-visible {
     /* If button is link, it may have hover styles. */
     text-decoration: none;
-
     transition:
         border-color 80ms linear,
         background-color 80ms linear,
         color 80ms linear;
 }
+
 /*
 button.loading,
 .button.loading {
