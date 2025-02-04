@@ -58,7 +58,7 @@ button,
     --padding-right: var(--padding-left);
 
     /* Making buttons a grid helps layout internal icons, and also
-       equalises the baseline of button and a.button elements. */
+       equalises the baseline of button and a.button elements */
     display: inline-block;
 
     font-size:      inherit;
@@ -67,8 +67,11 @@ button,
     padding-right:  var(--padding-right);
     padding-top:    calc(0.5 * (var(--size) - 1lh) - var(--border-width));
     padding-bottom: calc(0.5 * (var(--size) - 1lh) - var(--border-width));
-    min-height:     var(--size);
+
+    /* Have button collapse only when very necessary */
+    min-width: fit-content;
     width: auto;
+    min-height:     var(--size);
     height: auto;
     vertical-align: baseline;
     text-overflow: ellipsis;
@@ -146,10 +149,8 @@ button.loading,
 
 .button.block {
     display: block;
-    /* Necessary?? */
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    /*margin-left: auto;
+    margin-right: auto;*/
 }
 
 .loading button,
