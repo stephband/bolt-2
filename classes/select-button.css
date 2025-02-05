@@ -17,7 +17,7 @@
 .select-button {
     /* Note that iOS Safari will zoom-in the site layout if the select's text
        is less than 16px */
-    --size:          var(--input-height, 2.8125rem);
+    --size:          var(--input-size, 2.8125rem);
 
     --padding-left:  var(--input-padding-left, 0.5625rem);
     --padding-right: var(--input-padding-right, 0.5625rem);
