@@ -65,8 +65,8 @@ button,
     line-height:    inherit;
     padding-left:   var(--padding-left);
     padding-right:  var(--padding-right);
-    padding-top:    calc(0.5 * (var(--size) - 1lh) - var(--border-width));
-    padding-bottom: calc(0.5 * (var(--size) - 1lh) - var(--border-width));
+    padding-top:    calc(0.5 * (var(--size) - 1lh) - var(--border-width, 0rem));
+    padding-bottom: calc(0.5 * (var(--size) - 1lh) - var(--border-width, 0rem));
 
     /* Have button collapse only when very necessary */
     min-width: fit-content;
@@ -112,10 +112,15 @@ button,
 button > svg,
 [type="button"] > svg,
 .button > svg {
-    /* Make SVGs render as inline icons by default */
     display: inline-block;
-    width: 1lh;
-    height: 1lh;
+}
+
+.button > svg {
+    /* Make SVGs render as inline icons by default */
+    width: var(--size, 1lh);
+    height: var(--size, 1lh);
+    margin-top:    calc(-0.5 * (var(--size, 1lh) - 1lh) + var(--border-width, 0rem));
+    margin-bottom: calc(-0.5 * (var(--size, 1lh) - 1lh) + var(--border-width, 0rem));
     vertical-align: middle;
 }
 
