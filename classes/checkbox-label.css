@@ -28,9 +28,11 @@
     --invalid-fg: var(--fg);
 
     position: relative;
-    padding-left: calc(1.6 * var(--check-size));
     text-align: left;
 }
+
+.radio-label    { padding-left: calc(1.6 * var(--radio-size)); }
+.checkbox-label { padding-left: calc(1.6 * var(--check-size)); }
 
 .radio-label::before,
 .radio-label::after,

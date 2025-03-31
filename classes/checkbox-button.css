@@ -21,7 +21,7 @@
 
 .checkbox-button,
 .radio-button {
-    --size:          var(--input-height, 2.8125rem);
+    --size:          var(--input-size, 2.8125rem);
     --padding-left:  var(--input-padding-left, 0.5625rem);
     --padding-right: var(--input-padding-right, 0.5625rem);
     --fg:            var(--input-border-color, #bbbbbb);

@@ -43,9 +43,9 @@ Forms.
     /** --input-padding-right **/
     --input-padding-right: 0.5625rem;
 
-    /** --input-height
+    /** --input-size
     Height of inputs and selects **/
-    --input-height: 2.8125rem;
+    --input-size: 2.8125rem;
 
     /** --input-color
     Text colour of inputs, selects and textareas **/
@@ -364,7 +364,7 @@ select,
 textarea {
     font-size:       var(--input-font-size, inherit);
 
-    --size:          var(--input-height, 2.8125rem);
+    --size:          var(--input-size, 2.8125rem);
     --padding-left:  var(--input-padding-left, 0.5625rem);
     --padding-right: var(--input-padding-right, 0.5625rem);
     --border-width:  var(--input-border-width, 1px);

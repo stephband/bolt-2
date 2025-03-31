@@ -33,8 +33,8 @@ import './components/switch-label.js';
     /** --track-border **/
     /*--track-border: none;*/
 
-    /** --handle-width **/
-    --handle-width: calc(0.8 * var(--size));
+    /** --handle-size **/
+    --handle-size: calc(0.8 * var(--size));
 
     /** --handle-shadow **/
     --handle-shadow: 0 0.125rem 0.25rem 0.0625rem rgba(0,0,0,0.25);
@@ -80,12 +80,12 @@ import './components/switch-label.js';
 }
 
 .switch-label::after {
-    width:  var(--handle-width);
-    height: var(--handle-width);
+    width:  var(--handle-size);
+    height: var(--handle-size);
     top: 50%;
     left: 0;
     transform: translate(
-        calc(0.5 * var(--track-height) - 0.5 * var(--handle-width)),
+        calc(0.5 * var(--track-height) - 0.5 * var(--handle-size)),
         -50%
     );
     border: var(--handle-border);
@@ -99,7 +99,7 @@ import './components/switch-label.js';
 
 :checked + .switch-label::after {
     transform: translate(
-        calc(var(--track-width) - 0.5 * var(--track-height) - 0.5 * var(--handle-width)),
+        calc(var(--track-width) - 0.5 * var(--track-height) - 0.5 * var(--handle-size)),
         -50%
     );
 }
@@ -118,7 +118,7 @@ import './components/switch-label.js';
     /* Enables swipe interaction when switch-label.js is included */
     transition: none;
     transform:
-        translate(calc(0.5 * var(--track-height) - 0.5 * var(--handle-width) + var(--normal-value) * (
+        translate(calc(0.5 * var(--track-height) - 0.5 * var(--handle-size) + var(--normal-value) * (
             var(--track-width) - var(--track-height)
         )), -50%);
 }
@@ -163,6 +163,6 @@ import './components/switch-label.js';
 
 .right-switch-label::after {
     left: auto;
-    right: calc(var(--track-width) - var(--handle-width));
+    right: calc(var(--track-width) - var(--handle-size));
 }
 
