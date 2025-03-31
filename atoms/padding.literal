@@ -1,0 +1,13 @@
+
+${ (() => {
+    /* Provide some default sizes in no prefix breakpoint to match legacy
+       defaults, otherwise none */
+    //if (data.prefix !== '') return;
+    if (data.paddings) return;
+    data.paddings = [16, 32, 48];
+})(), '' }
+
+${ data.paddings.map((top) => data.paddings.map((bot) => `
+.${ data.prefix }pad-${ px(top) }-${ px(bot) } { padding-top: ${ rem(top) }rem; padding-bottom: ${ rem(bot) }rem; }`).join('')
+).join('')
+}

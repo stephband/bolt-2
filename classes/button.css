@@ -58,17 +58,20 @@ button,
     --padding-right: var(--padding-left);
 
     /* Making buttons a grid helps layout internal icons, and also
-       equalises the baseline of button and a.button elements. */
+       equalises the baseline of button and a.button elements */
     display: inline-block;
 
     font-size:      inherit;
     line-height:    inherit;
     padding-left:   var(--padding-left);
     padding-right:  var(--padding-right);
-    padding-top:    calc(0.5 * (var(--size) - 1lh) - var(--border-width));
-    padding-bottom: calc(0.5 * (var(--size) - 1lh) - var(--border-width));
-    min-height:     var(--size);
+    padding-top:    calc(0.5 * (var(--size) - 1lh) - var(--border-width, 0rem));
+    padding-bottom: calc(0.5 * (var(--size) - 1lh) - var(--border-width, 0rem));
+
+    /* Have button collapse only when very necessary */
+    min-width: fit-content;
     width: auto;
+    min-height:     var(--size);
     height: auto;
     vertical-align: baseline;
     text-overflow: ellipsis;
@@ -109,10 +112,15 @@ button,
 button > svg,
 [type="button"] > svg,
 .button > svg {
-    /* Allow SVGs to render as inline icons */
     display: inline-block;
-    width: auto;
-    height: 1lh;
+}
+
+.button > svg {
+    /* Make SVGs render as inline icons by default */
+    width: var(--size, 1lh);
+    height: var(--size, 1lh);
+    margin-top:    calc(-0.5 * (var(--size, 1lh) - 1lh) + var(--border-width, 0rem));
+    margin-bottom: calc(-0.5 * (var(--size, 1lh) - 1lh) + var(--border-width, 0rem));
     vertical-align: middle;
 }
 
@@ -122,12 +130,12 @@ button:focus-visible,
 .button:focus-visible {
     /* If button is link, it may have hover styles. */
     text-decoration: none;
-
     transition:
         border-color 80ms linear,
         background-color 80ms linear,
         color 80ms linear;
 }
+
 /*
 button.loading,
 .button.loading {
@@ -146,10 +154,8 @@ button.loading,
 
 .button.block {
     display: block;
-    /* Necessary?? */
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    /*margin-left: auto;
+    margin-right: auto;*/
 }
 
 .loading button,
