@@ -28,14 +28,14 @@ body {
     hyphenate-limit-lines: 2;
     hyphenate-limit-zone: 8%;
     hyphenate-limit-last: always;
+
+    /* Blocks of text should not end with single orphan */
+    text-wrap: pretty;
 }
 
 p,
 li,
 dd {
-    /* Paragraphs of text should not end with single orphan */
-    text-wrap: pretty;
-
     /* Old style numerals for flow text */
     font-variant-numeric: oldstyle-nums proportional-nums;
 }
