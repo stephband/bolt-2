@@ -1,7 +1,7 @@
 
 /* Enabales left-right swipe gestures on .switch-label */
 
-import { clamp }   from 'fn/clamp.js';
+import clamp       from 'fn/clamp.js';
 import overload    from 'fn/overload.js';
 import attribute   from 'dom/attribute.js';
 import closest     from 'dom/closest.js';
