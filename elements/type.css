@@ -156,23 +156,24 @@ dl > dt {
 blockquote         { font-style: italic; font-family: Georgia, serif; }
 blockquote::before { content: "\201C"; font-size: 3em; color: #484848; float: left; margin-left: -0.6em; line-height: 0.92em; }
 
-p:empty,
-h1:empty,
-h2:empty,
-h3:empty,
-h4:empty,
-h5:empty,
-h6:empty,
-ul:empty,
-ol:empty,
-dl:empty,
-li:empty,
-dt:empty,
-dd:empty,
-blockquote:empty {
+p:not([contenteditable]):empty,
+h1:not([contenteditable]):empty,
+h2:not([contenteditable]):empty,
+h3:not([contenteditable]):empty,
+h4:not([contenteditable]):empty,
+h5:not([contenteditable]):empty,
+h6:not([contenteditable]):empty,
+ul:not([contenteditable]):empty,
+ol:not([contenteditable]):empty,
+dl:not([contenteditable]):empty,
+li:not([contenteditable]):empty,
+dt:not([contenteditable]):empty,
+dd:not([contenteditable]):empty,
+blockquote:not([contenteditable]):empty {
     /* Hide any typographic block that is empty. This is a bit controversial,
        but helps correct style errors in blocks of user input where the HTML has
-       ended up being dodgy - perhaps thanks to a CMS editor, for example. */
+       ended up being dodgy - perhaps thanks to a CMS editor, for example.
+       However it does somewhat render contenteditable unusable, so avoid that. */
     display: none;
 }
 
