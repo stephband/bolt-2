@@ -608,6 +608,8 @@ input[type='month'] {
    make them opacity 0, and overlay a label. You don't get to display the
    filename, but at least you get some freedom to style them. */
 
+/* TODO! We now have input::file-selector-button for styling file buttons. Test! */
+
 input[type='file'] {
     color: inherit;
     background: none;
