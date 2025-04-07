@@ -163,6 +163,7 @@ input + .invisible + .radio-label,
 }
 
 
+:host,
 :root {
     /**
     --check-size

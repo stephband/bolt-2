@@ -20,8 +20,9 @@ overflow, and only the `background-image`, centered and 'cropped' via
     overflow: hidden;
     position: relative;
 
-    /* Nullify padding that may have been put there by other
-       styling, say for example by <button class="thumb"> */
+    /* Nullify padding that may have been put there by other styling, say for
+       example by label styling on <label class="thumb"> */
+    padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
 
