@@ -150,8 +150,11 @@ function handleHash(e) {
     if (!hash || !(/^#\S+$/.test(hash))) return;
 
     // Hash may nonetheless be an invalid selector, this may error, that's ok
-    const element = document.querySelector(hash);
-    if (element) locate(element);
+    try {
+        const element = document.querySelector(hash);
+        if (element) locate(element);
+    }
+    catch(e) {}
 }
 
 function handleLinkClick(a, e, fn) {

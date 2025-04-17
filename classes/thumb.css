@@ -54,6 +54,11 @@ overflow, and only the `background-image`, centered and 'cropped' via
     color: inherit;
 }
 
+.thumb[type="button"] {
+    /* Override button styles */
+    width: 0;
+}
+
 .thumb > img,
 .thumb > svg,
 .thumb > iframe {
