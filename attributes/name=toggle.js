@@ -125,7 +125,7 @@ export function locate(element) {
     if (!actions) return;
     if (!actions.locate) return;
     const buttons = buttonsFromElement(element);
-    const state = actions.locate(element, null, buttons);
+    const state = actions.locate(element, window, buttons);
     if (state) buttons.forEach(addOnClass);
     else buttons.forEach(removeOnClass);
     return true;

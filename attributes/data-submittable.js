@@ -15,21 +15,14 @@ it by permitting the value `"application/json"` as well as the standard
 
 import compose from 'fn/compose.js';
 import get     from 'fn/get.js';
-import matches from 'dom/matches.js';
 import request from 'dom/request.js';
 import events  from 'dom/events.js';
 import trigger from 'dom/trigger.js';
 
 
-// Define
-
-const match = matches('[submittable], [data-submittable]');
-
-
 // Functions
-events('submit', document)
-.filter(compose(match, get('target')))
-.each(function(e) {
+events({ type: 'submit', select: '[data-submittable]' }, document)
+.each((e) => {
 	e.preventDefault();
 
 	const form = e.target;

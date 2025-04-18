@@ -162,6 +162,7 @@ export function close(element, target) {
 }
 
 actions('dialog', {
+    locate: open,
     open:   open,
     close:  close,
     toggle: (element, target) => element.open ?
