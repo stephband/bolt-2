@@ -2,12 +2,14 @@
    CSS normalisation. Normalisation for forms can be found in forms.css.
    Similarly, most normalisation for typography can be found in type.css. */
 
+
 /* Enable default view transitions. Any element that’s the same from one page
    to the next stays exactly in place, those that differ get a fade. */
 
 @view-transition {
     navigation: auto;
 }
+
 
 /* Normalise elements */
 :root, :host,
