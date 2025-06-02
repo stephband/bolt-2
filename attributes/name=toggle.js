@@ -217,7 +217,7 @@ export function actions(selector, actions, root = document) {
     const elements = getElements(root);
     elements[selector] = actions;
     window.console &&
-    window.console.log('%c<button>%c actions for selector "' + selector + '"', 'color:#3a8ab0;font-weight:600;', 'color:#888888;font-weight:400;');
+    window.console.log('%c<button>%c actions for ' + selector, 'color:#3a8ab0;font-weight:600;', 'color:#888888;font-weight:400;');
 }
 
 
