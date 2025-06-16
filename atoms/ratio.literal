@@ -1,15 +1,15 @@
 
-.ratio-1\:2        { aspect-ratio: 0.5; }
-.ratio-9\:16       { aspect-ratio: 0.5625; }
-.ratio-2\:3        { aspect-ratio: 0.666666667; }
-.ratio-A,
-.ratio-A-portrait  { aspect-ratio: 0.707106781; }
-.ratio-3\:4        { aspect-ratio: 0.75; }
-.ratio-4\:5        { aspect-ratio: 0.8; }
-.ratio-1\:1        { aspect-ratio: 1; }
-.ratio-5\:4        { aspect-ratio: 1.25; }
-.ratio-4\:3        { aspect-ratio: 1.333333333; }
-.ratio-A-landscape { aspect-ratio: 1.414213562; }
-.ratio-3\:2        { aspect-ratio: 1.5; }
-.ratio-16\:9       { aspect-ratio: 1.777777778; }
-.ratio-2\:1        { aspect-ratio: 2; }
+.${ data.prefix }ratio-1\:2        { aspect-ratio: 0.5; }
+.${ data.prefix }ratio-9\:16       { aspect-ratio: 0.5625; }
+.${ data.prefix }ratio-2\:3        { aspect-ratio: 0.666666667; }
+.${ data.prefix }ratio-A,
+.${ data.prefix }ratio-A-portrait  { aspect-ratio: 0.707106781; }
+.${ data.prefix }ratio-3\:4        { aspect-ratio: 0.75; }
+.${ data.prefix }ratio-4\:5        { aspect-ratio: 0.8; }
+.${ data.prefix }ratio-1\:1        { aspect-ratio: 1; }
+.${ data.prefix }ratio-5\:4        { aspect-ratio: 1.25; }
+.${ data.prefix }ratio-4\:3        { aspect-ratio: 1.333333333; }
+.${ data.prefix }ratio-A-landscape { aspect-ratio: 1.414213562; }
+.${ data.prefix }ratio-3\:2        { aspect-ratio: 1.5; }
+.${ data.prefix }ratio-16\:9       { aspect-ratio: 1.777777778; }
+.${ data.prefix }ratio-2\:1        { aspect-ratio: 2; }
