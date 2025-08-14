@@ -1,36 +1,12 @@
 
 /**
-button,
-.button,
-[type="button"]
+.button
 
 ```html
-<button type="button">Button</button>
 <a class="button" href="#buttons">Link</a>
 ```
 **/
 
-button,
-[type="button"] {
-    /* And they don't automatically inherit font styles. */
-    font-size: inherit;
-    font-family: inherit;
-
-    -ms-hyphens: none;
-        hyphens: none;
-
-    color: inherit;
-    background: transparent;
-
-    /* Hit zones for buttons and links really must be a minimum of 32x32 (and
-       preferably >40x40 for finger touches to register reliably) */
-    min-width: 2rem;
-    min-height: 2rem;
-    cursor: pointer;
-}
-
-button,
-[type="button"],
 .button {
     /**
     --size
@@ -109,13 +85,8 @@ button,
         color 120ms linear;
 }
 
-button > svg,
-[type="button"] > svg,
 .button > svg {
     display: inline-block;
-}
-
-.button > svg {
     /* Make SVGs render as inline icons by default */
     width: var(--size, 1lh);
     height: var(--size, 1lh);
@@ -124,8 +95,6 @@ button > svg,
     vertical-align: middle;
 }
 
-button:hover,
-button:focus-visible,
 .button:hover,
 .button:focus-visible {
     /* If button is link, it may have hover styles. */

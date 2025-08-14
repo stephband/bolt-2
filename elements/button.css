@@ -1,0 +1,43 @@
+
+/**
+button,
+[type="button"]
+
+```html
+<button type="button">Button</button>
+```
+**/
+
+button,
+[type="button"] {
+    /* Make buttons automatically inherit font styles. */
+    font-size: inherit;
+    font-family: inherit;
+
+    /* Remove browser defaults */
+    padding: 0;
+
+    -ms-hyphens: none;
+        hyphens: none;
+
+    color: inherit;
+    background: transparent;
+    border-width: 0;
+
+    /* Hit zones for buttons really must be a minimum of 32x32 (and
+       preferably >40x40 for finger touches to register reliably) */
+    min-width: 2rem;
+    min-height: 2rem;
+
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible,
+[type="button"]:hover,
+[type="button"]:focus-visible {
+    transition:
+        border-color 80ms linear,
+        background-color 80ms linear,
+        color 80ms linear;
+}

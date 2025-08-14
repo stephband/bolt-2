@@ -48,7 +48,8 @@ progress, meter,
     text-size-adjust: none;
 }
 
-body {
+body,
+button {
 	padding: 0;
 }
 
