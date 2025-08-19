@@ -15,7 +15,11 @@ import rect            from 'dom/rect.js';
 import trigger         from 'dom/trigger.js';
 import { disableScroll, enableScroll } from 'dom/scroll.js';
 import { trapFocus, untrapFocus }      from 'dom/focus.js';
+import { setRelatedTarget } from '../events/open-close.js';
 import { actions }     from '../attributes/name=toggle.js';
+
+
+const onceOptions = { once: true };
 
 // As it is possible to have multiple dialogs open, we must enumerate them
 let n = 0;
@@ -68,6 +72,10 @@ export function open(element, target) {
     // Is the element closed?
     if (element.open) { return; }
 
+    // Set related target of open event. This should not be required once toggle
+    // event has a reliable source property.
+    setRelatedTarget(target);
+
     // Implement our own modal attribute. We do this rather than use .showModal()
     // because it is impossible to show, for example, non-modal message dialogs
     // on top of .showModal() dialogs
@@ -80,14 +88,13 @@ export function open(element, target) {
         element.showModal();
         disableDocumentScroll();
 
-        // Dialogs do have a 'close' event, just remember the powers that be have
-        // decided that it should not bubble.
-        events('close', element)
-        .slice(0, 1)
-        .each((e) => {
+        // Dialogs have a 'close' event and a 'toggle' event, but the powers
+        // that be have decided they should not bubble. This is nonsense, it's
+        // not like they're high frequency.
+        element.addEventListener('close', (e) => {
             enableDocumentScroll();
             focused.focus();
-        });
+        }, onceOptions);
     }
     else if (mode === 'overlay') {
         element.show();
@@ -104,22 +111,17 @@ export function open(element, target) {
         document.body.append(backdrop);
 
         // Dialogs do have a 'close' event, it does not bubble.
-        events('close', element)
-        .slice(0, 1)
-        .each(() => {
+        element.addEventListener('close', (e) => {
             // Reenable document scroll
             enableDocumentScroll();
             // Return focus to wherever it was before
             untrapFocus();
-        });
+        }, onceOptions);
     }
     else {
         // Default unaugmented behaviour
         element.show();
     }
-
-    // Give the dialog an "open" event
-    trigger({ type: 'open', relatedTarget: target }, element)
 
     // Return state of dialog
     return true;
@@ -144,6 +146,8 @@ export function close(element, target) {
     .filter(isTargetEvent)
     .slice(0, 1)
     .each((e) => {
+        // Set related target of close event.
+        setRelatedTarget(target);
         element.close();
         element.classList.remove('closing');
     });
@@ -154,6 +158,9 @@ export function close(element, target) {
 
     // If there is no transition applied close immediately
     ends.stop();
+
+    // Set related target of close event.
+    setRelatedTarget(target);
     element.close();
     element.classList.remove('closing');
 
