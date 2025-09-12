@@ -16,18 +16,14 @@ button {
 }
 
 body {
-    /* Stop short words being hyphenated, prevent ladders of hyphens, and reduce
-       overall hyphenation a bit */
-    -webkit-hyphens: auto;
+    /* Allow hyphenation to occur where a hyphen break character is written */
+    hyphens: manual;
     -webkit-hyphenate-limit-before: 4;
-    -webkit-hyphenate-limit-after: 3;
-    -webkit-hyphenate-limit-lines: 2;
+    -webkit-hyphenate-limit-after: 4;
+    hyphenate-limit-chars: 10 4 4;
 
-    hyphens: auto;
-    hyphenate-limit-chars: 7 4 3;
-    hyphenate-limit-lines: 2;
-    hyphenate-limit-zone: 8%;
-    hyphenate-limit-last: always;
+    /* Break single words that are bigger than their container */
+    overflow-wrap: break-word;
 
     /* Blocks of text should not end with single orphan */
     text-wrap: pretty;
