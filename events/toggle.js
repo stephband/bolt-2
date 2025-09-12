@@ -4,19 +4,17 @@
    neuter it in the capture phase and replace it with a close event that does
    bubble. */
 
+// Until toggle events have a reliable source property we need a means to track
+// sources that launch the open or close
+let source;
+
 document.addEventListener('toggle', (e) => {
-    console.log('TOGGLE', e.target.open, e.source);
-    // Where event is missing a source get it from relatedTarget
-    if (!e.source) e.source = relatedTarget;
+    // Where event is missing a source get it from source
+    if (!e.source) e.source = source;
     // Reset related target
-    relatedTarget = undefined;
+    source = undefined;
 }, true);
 
-
-// Until toggle events have a reliable source property we need a means to track
-// relatedTargets that launch the open or close
-let relatedTarget;
-
-export function setRelatedTarget(element) {
-    relatedTarget = element;
+export function setToggleSource(element) {
+    source = element;
 }

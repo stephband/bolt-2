@@ -15,7 +15,7 @@ import rect            from 'dom/rect.js';
 import trigger         from 'dom/trigger.js';
 import { disableScroll, enableScroll } from 'dom/scroll.js';
 import { trapFocus, untrapFocus }      from 'dom/focus.js';
-import { setRelatedTarget } from '../events/toggle.js';
+import { setToggleSource } from '../events/toggle.js';
 import { actions }     from '../attributes/name=toggle.js';
 
 
@@ -84,7 +84,7 @@ export function open(element, target) {
 
     // Set related target of open event. This should not be required once toggle
     // event has a reliable source property.
-    setRelatedTarget(target);
+    setToggleSource(target);
 
     // Implement our own modal attribute. We do this rather than use .showModal()
     // because it is impossible to show, for example, non-modal message dialogs
@@ -166,7 +166,7 @@ export function close(element, target) {
     .slice(0, 1)
     .each((e) => {
         // Set related target of close event.
-        setRelatedTarget(target);
+        setToggleSource(target);
         element.close();
         element.classList.remove('closing');
     });
@@ -179,7 +179,7 @@ export function close(element, target) {
     ends.stop();
 
     // Set related target of close event.
-    setRelatedTarget(target);
+    setToggleSource(target);
     element.close();
     element.classList.remove('closing');
 
