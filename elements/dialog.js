@@ -15,11 +15,21 @@ import rect            from 'dom/rect.js';
 import trigger         from 'dom/trigger.js';
 import { disableScroll, enableScroll } from 'dom/scroll.js';
 import { trapFocus, untrapFocus }      from 'dom/focus.js';
-import { setRelatedTarget } from '../events/open-close.js';
+import { setRelatedTarget } from '../events/toggle.js';
 import { actions }     from '../attributes/name=toggle.js';
 
 
 const onceOptions = { once: true };
+const isSafari    = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+let requiresDialogToggleEvent = isSafari;
+
+document.addEventListener('toggle', (e) => {
+    if (ToggleEvent.isPrototypeOf(e) && e.target.matches('dialog')) {
+        console.log('Disabling custom toggle events for dialogs');
+        requiresDialogToggleEvent = false;
+    }
+});
+
 
 // As it is possible to have multiple dialogs open, we must enumerate them
 let n = 0;
@@ -121,6 +131,15 @@ export function open(element, target) {
     else {
         // Default unaugmented behaviour
         element.show();
+    }
+
+    if (requiresDialogToggleEvent) {
+        element.addEventListener('close', (e) => {
+            if (!requiresDialogToggleEvent) return;
+            trigger({ type: 'toggle', newState: 'closed', oldState: 'open', source: target }, element);
+        }, onceOptions);
+
+        trigger({ type: 'toggle', newState: 'open', oldState: 'closed', source: target }, element);
     }
 
     // Return state of dialog
