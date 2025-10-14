@@ -66,7 +66,8 @@ function getElements(root) {
     if (!map.has(root)) {
         map.set(root, {});
         events('click', root).each(handleClick);
-        events('focusin', root).each(handleFocus);
+        // This causes enormous problems with trigger order in Safari and FF
+        //events('focusin', root).each(handleFocus);
 
         // Only listen to hashchange to trigger things things in the top level
         // DOM (the light DOM, no shadow DOMs)
