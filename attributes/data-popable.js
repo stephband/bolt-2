@@ -71,7 +71,7 @@ export function open(element, button, buttons) {
             streams.forEach(stop);
             // If close was not caused by a button, or if the button is inside
             // closed element, return focus to opening button
-            if (!e.relatedTarget || element.contains(e.relatedTarget)) focus(button);
+            if (button && (!e.relatedTarget || element.contains(e.relatedTarget))) focus(button);
         })
     ];
 
