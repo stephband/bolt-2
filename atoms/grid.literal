@@ -32,6 +32,7 @@ ${
 a.${ data.prefix }grid,
 a.${ data.prefix }grid:hover,
 a.${ data.prefix }grid:focus {
+    /* If a link is a grid we probably don't want it to be underlined */
     text-decoration: none;
 }
 
@@ -49,12 +50,8 @@ a.${ data.prefix }grid:focus {
     grid-auto-flow: dense;
 }
 
-.${ data.prefix }y-start-grid {
-    align-content: start;
-}
-
-.${ data.prefix }y-center-grid {
-    align-content: center;
+.${ data.prefix }x-sub-grid {
+    grid-template-columns: subgrid;
 }
 
 .${ data.prefix }x-start-grid {
@@ -69,6 +66,22 @@ a.${ data.prefix }grid:focus {
     justify-content: end;
 }
 
+.${ data.prefix }y-sub-grid {
+    grid-template-rows: subgrid;
+}
+
+.${ data.prefix }y-start-grid {
+    align-content: start;
+}
+
+.${ data.prefix }y-center-grid {
+    align-content: center;
+}
+
+.${ data.prefix }y-end-grid {
+    align-content: center;
+}
+
 /* x */
 ${ Array.from({ length: data.columns || 12 }).map((nowt, i) => i + 1).map((n) => `
 .${ data.prefix ? data.prefix + n : '\\3' + (n + '')[0] + ' ' + (n + '').slice(1) }x-grid  { grid-template-columns: repeat(${ n },  minmax(0, 1fr)); }`).join('')
@@ -80,12 +93,6 @@ ${ Array.from({ length: data.columns || 12 }).map((nowt, i) => i + 1).map((n) =>
 .${ data.prefix ? data.prefix + n : '\\3' + (n + '')[0] + ' ' + (n + '').slice(1) }x { grid-column-end: span ${ n } !important; }`).join('')
 }
 .${ data.prefix }nx { grid-column-end: -1 !important; }
-
-.${ data.prefix }x-end {
-    justify-self: end !important;
-    margin-left: auto;
-    margin-right: 0;
-}
 
 .${ data.prefix }x-start {
     justify-self: start !important;
@@ -99,26 +106,18 @@ ${ Array.from({ length: data.columns || 12 }).map((nowt, i) => i + 1).map((n) =>
     margin-right: auto;
 }
 
+.${ data.prefix }x-end {
+    justify-self: end !important;
+    margin-left: auto;
+    margin-right: 0;
+}
+
 .${ data.prefix }x-stretch {
     justify-self: stretch !important;
     margin-left: 0;
     margin-right: 0;
     max-width: 100%;
     width: 100%;
-}
-
-.${ data.prefix }x-unbleedl {
-    margin-left:  calc(0.5 * var(--x-gap));
-    margin-right: 0;
-    max-width:    calc(100% - 0.5 * var(--x-gap));
-    width:        calc(100% - 0.5 * var(--x-gap));
-}
-
-.${ data.prefix }x-unbleedr {
-    margin-left:  0;
-    margin-right: calc(0.5 * var(--x-gap));
-    max-width:    calc(100% - 0.5 * var(--x-gap));
-    width:        calc(100% - 0.5 * var(--x-gap));
 }
 
 .${ data.prefix }x-bleedl {

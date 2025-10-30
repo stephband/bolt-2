@@ -1,0 +1,13 @@
+.wrap {
+    white-space: normal;
+    flex-wrap: wrap;
+}
+
+.no-wrap {
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.break-wrap       { white-space: normal; overflow-wrap: break-word; }
+.line-wrap        { white-space: pre; }

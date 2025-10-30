@@ -247,21 +247,5 @@ abbr              { letter-spacing: 0.03125em; }
 
 /* Classes */
 
-.note             { font-size: 0.9167em; line-height: 1.8181; font-style: italic; }
-
 .tag-code::before { content: '<'; margin-right: -0.1em; }
 .tag-code::after  { content: '>'; margin-left: -0.1em; }
-
-.wrap {
-    white-space: normal;
-    flex-wrap: wrap;
-}
-
-.no-wrap {
-    white-space: nowrap;
-    flex-wrap: nowrap;
-    text-overflow: ellipsis;
-}
-
-.break-wrap       { white-space: normal; overflow-wrap: break-word; }
-.line-wrap        { white-space: pre; }
