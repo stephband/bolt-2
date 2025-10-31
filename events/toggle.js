@@ -10,7 +10,7 @@ let source;
 
 document.addEventListener('toggle', (e) => {
     // Where event is missing a source get it from source
-    if (!e.source) e.source = source;
+    if (!('source' in e)) e.source = source;
     // Reset related target
     source = undefined;
 }, true);
