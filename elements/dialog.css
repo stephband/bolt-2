@@ -53,7 +53,7 @@ body:has(dialog[mode="overlay"]) > .dialog-backdrop {
 }
 
 dialog::backdrop {
-    background: red;
+    background: rgba(0,0,0,0.4);
 }
 
 dialog[open].closing::backdrop,
