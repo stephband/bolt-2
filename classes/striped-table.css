@@ -18,28 +18,40 @@
 ```
 **/
 
+.striped-table {
+    width: calc(100% + 1.5em);
+    margin-left:  -0.75em;
+    margin-right: -0.75em;
+}
+
+.striped-table th,
+.striped-table td {
+    padding-left:  0.375em;
+    padding-right: 0.375em;
+}
+
 .striped-table th:first-child,
 .striped-table td:first-child {
-    padding-left: 0.75rem;
+    padding-left: 0.75em;
 }
 
 .striped-table th:last-child,
 .striped-table td:last-child {
-    padding-right: 0.75rem;
+    padding-right: 0.75em;
 }
 
-.striped-table > tbody > tr > th,
-.striped-table > tbody > tr > td {
-    padding-top:    0.75rem;
-    padding-bottom: 0.75rem;
+.striped-table > * > tr > th,
+.striped-table > * > tr > td {
+    padding-top:    0.75em;
+    padding-bottom: 0.75em;
 }
 
-.striped-table > tbody > tr:nth-child(2n) > th,
-.striped-table > tbody > tr:nth-child(2n) > td {
+.striped-table > * > tr:nth-child(2n) > th,
+.striped-table > * > tr:nth-child(2n) > td {
     background-color: hsla(198, 8%, 100%, 0.2);
 }
 
-.striped-table > tbody > tr:nth-child(2n + 1) > th,
-.striped-table > tbody > tr:nth-child(2n + 1) > td {
+.striped-table > * > tr:nth-child(2n + 1) > th,
+.striped-table > * > tr:nth-child(2n + 1) > td {
     background-color: hsla(198, 8%, 50%, 0.05);
 }
