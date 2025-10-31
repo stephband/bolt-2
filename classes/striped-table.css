@@ -40,18 +40,18 @@
     padding-right: 0.75em;
 }
 
-.striped-table > * > tr > th,
-.striped-table > * > tr > td {
+.striped-table > tbody > tr > th,
+.striped-table > tbody > tr > td {
     padding-top:    0.75em;
     padding-bottom: 0.75em;
 }
 
-.striped-table > * > tr:nth-child(2n) > th,
-.striped-table > * > tr:nth-child(2n) > td {
+.striped-table > tbody > tr:nth-child(2n) > th,
+.striped-table > tbody > tr:nth-child(2n) > td {
     background-color: hsla(198, 8%, 100%, 0.2);
 }
 
-.striped-table > * > tr:nth-child(2n + 1) > th,
-.striped-table > * > tr:nth-child(2n + 1) > td {
+.striped-table > tbody > tr:nth-child(2n + 1) > th,
+.striped-table > tbody > tr:nth-child(2n + 1) > td {
     background-color: hsla(198, 8%, 50%, 0.05);
 }
